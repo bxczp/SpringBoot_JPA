@@ -83,13 +83,14 @@ public class BookController {
         return modelAndView;
     }
     
+    //指定Post方法
     @PostMapping("/update")
     public String update(Book book) {
         bookDao.save(book);
         return "redirect:/book/list";
     }
     
-    @RequestMapping("/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String delete(@PathVariable(name="id", required=true)Integer id) {
         bookDao.deleteById(id);
         return "redirect:/book/list";

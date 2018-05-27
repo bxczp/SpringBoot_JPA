@@ -15,6 +15,7 @@ public interface BookDao extends JpaRepository<Book, Integer>,JpaSpecificationEx
     @Query("select b from Book b where b.name like %?1%")  // HQL语句查询
     public List<Book> findByName(String name);
     
+    //nativeQuery 开启本地查询，默认为false，即关闭，即默认为HQL语句查询
     @Query(value="select * from t_book order by RAND() limit ?1", nativeQuery=true)
     public List<Book> randomList(Integer limit);
 }

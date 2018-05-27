@@ -1,6 +1,7 @@
 ##web服务配置
 server: 
   port: 8080
+  ##配置默认首页地址
   servlet:
     context-path: /
     
